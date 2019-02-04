@@ -5,9 +5,8 @@ import com.google.common.base.Stopwatch;
 
 public class Fibonacci {
 
-    static long rec = 0;
-
     public static void main (String[] args) {
+
         // creation of a scanner that takes system input, in this case, the nth fibonacci times.
         Scanner getInput = new Scanner(System.in);
 
@@ -17,7 +16,9 @@ public class Fibonacci {
         // creation of int maxNum, that is the max times the fibonacci sequence executes for, inserted by the user.
         int maxNum = getInput.nextInt();
 
+        // Creation of stopwatch for iteration method
         Stopwatch stopwatchIte = Stopwatch.createStarted();
+
         // Inserts the user input into the method that uses a for loop to calculate the fibonacci sequence.
         System.out.println(fiboSeriesIte(maxNum));
 
@@ -43,22 +44,26 @@ public class Fibonacci {
 
     public static long fiboSeriesRec(long n){
 
+        // If statement for the recursion method, where it returns 0 and 1 respectfully depending on user input
         if(n ==0){
             return 0;
         } else if (n == 1){
             return 1;
         }
         else{
+            // recalls itself but by using (n-1)+(n-2) formula emulates the fibonacci sequence.
             return fiboSeriesRec(n-1)+fiboSeriesRec(n-2);
         }
     }
 
     // The Iteration method that uses a for loop to calculate the fibonacci numbers up to a user input nth times.
     public static long fiboSeriesIte(long n){
+
         // Declaration of integers for the different ints used to calculate the fibonacci series, oldNum is the first number in this case 0, and 1 is the second.
         long oldNum = 0;
         long newNum = 1;
         long result;
+
         // if statement, depending on user input to calculate fibonacci
         if (n==0){
             // Spits back an error for zero input
