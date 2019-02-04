@@ -38,8 +38,8 @@ public class Fibonacci {
         stopwatchRec.stop();
 
         // Prints out the outcome of both method's time.
-        System.out.println("\nIteration method toke: "+stopwatchIte);
-        System.out.println("Recursion method toke: "+stopwatchRec);
+        System.out.println("\nIteration method took: "+stopwatchIte);
+        System.out.println("Recursion method took: "+stopwatchRec);
     }
 
     public static long fiboSeriesRec(long n){
