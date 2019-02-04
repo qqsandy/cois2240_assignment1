@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Fibonacci {
 
 
-
-    public static void main (String[] args){
+    public static void main (String[] args) {
         // creation of a scanner that takes system input, in this case, the nth fibonacci times.
         Scanner getInput = new Scanner(System.in);
         // Prints out to have user input
@@ -14,23 +13,28 @@ public class Fibonacci {
         // creation of int maxNum, that is the max times the fibonacci sequence executes for, inserted by the user.
         int maxNum = getInput.nextInt();
         // Inserts the user input into the method that uses a for loop to calculate the fibonacci sequence.
-       // System.out.println(fiboSeriesIte(maxNum));
-        System.out.println("-------------------------");
+        System.out.println(fiboSeriesIte(maxNum));
+        System.out.println("-----------------------------");
         System.out.println(fiboSeriesRec(maxNum));
     }
 
-    public static int fiboSeriesRec(int n){
+    public static int fiboSeriesRec(int num) {
+        int prevNum = 0;
+        int nextNum = 1;
         int sum;
-        if (n==0){
+        if (num == 0) {
             // Spits back an error for zero input
             return 0;
-        } else if (n<=2){
+        } else if (num == 1) {
             return 1;
-        } else{
-            return fiboSeriesRec(n-1) + fiboSeriesRec(n-2);
+        } else {
+            System.out.println(prevNum);
+            sum = prevNum + nextNum;
+            prevNum = nextNum;
+            prevNum = sum;
+            return fiboSeriesIte(num);
         }
-
-    }
+}
 
     // The Interation method that uses a for loop to calculate the fibonacci numbers up to a user input nth times.
     static int fiboSeriesIte(int n){
