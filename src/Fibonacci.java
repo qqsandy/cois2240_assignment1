@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import com.google.common.base.Stopwatch;
 
 
 public class Fibonacci {
@@ -12,10 +12,29 @@ public class Fibonacci {
         System.out.println("Enter a number for the fibonacci sequence: ");
         // creation of int maxNum, that is the max times the fibonacci sequence executes for, inserted by the user.
         int maxNum = getInput.nextInt();
+
+        Stopwatch stopwatchIte = Stopwatch.createStarted();
         // Inserts the user input into the method that uses a for loop to calculate the fibonacci sequence.
         System.out.println(fiboSeriesIte(maxNum));
+
+        // Stops timer for Iteration method
+        stopwatchIte.stop();
+
+        // Just a line
         System.out.println("-----------------------------");
+
+        // Declaration and creation of stopwatch timer starting.
+        Stopwatch stopwatchRec = Stopwatch.createStarted();
+
+        // Inputting user input into Recursion method
         System.out.println(fiboSeriesRec(maxNum));
+
+        // Stops timer for recursion method
+        stopwatchRec.stop();
+
+        // Prints out the outcome of both method's time.
+        System.out.println("Iteration method toke: "+stopwatchIte);
+        System.out.println("Recursion method toke: "+stopwatchRec);
     }
 
     public static int fiboSeriesRec(int num) {
